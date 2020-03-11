@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	repos, repoMap, _ = githubGetUserRepos("975bb0d7acde4a86dce7c87907007f150cf9117a")
+	repos, repoMap, _ = githubGetUserRepos(os.Getenv("GITHUB_ACCESS_TOKEN"))
 
 	app  = kingpin.New("git-helper", "A command line tool for interacting with git repo information").Version("1.0.0")
 	list = app.Command("list", "List all of your repositories")
